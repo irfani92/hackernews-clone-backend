@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HackerNews Clone
+
+![Logo](documentation/frontend.png)
+
+This repository contains two projects:
+- Frontend: Built with NextJS
+- Backend: Built with Golang
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up the project on your local machine.
+
+### Prerequisites
+
+* Git
+* Node.js and npm
+* Go 1.21 or later
+* Make
+* A Hacker News API.
+
+## Installation
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/irfani92/hackernews-clone-backend
+cd hackernews-clone-backend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Frontend Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to the frontend directory and install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cd frontend
+npm i
+```
 
-## Learn More
+### 3. Backend Setup
 
-To learn more about Next.js, take a look at the following resources:
+Navigate to the backend directory and install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd backend
+go mod download
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Running the Application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Start the Backend Server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+From the project root directory:
+
+```bash
+cd backend
+go build -o api cmd/api/main.go
+./api
+```
+
+The API will be available at `http://localhost:8080`.
+
+### 2. Start the Frontend Development Server
+
+Open a new terminal and navigate to the frontend directory:
+
+```bash
+cd frontend
+npm run dev
+```
+
+The frontend will be available at `http://localhost:3000`.
+
+## Tech Stack
+
+### Frontend
+- **Framework**: Next.js (React)
+- **Styling**: Tailwind CSS
+
+### Backend
+- **Framework**: Gin
+
+## Features
+
+- **Backend**
+    * Retrieves top stories, new stories, ask stories, show stories, and job stories.
+    * Retrieves individual item details (stories, comments, etc.).
+    * Uses Hacker News API.
+    * Uses Gin framework.
+    * CORS enabled.
+    * Uses Go Modules
+
+- **Frontend**
+    * Displays top stories, new stories, ask stories, show stories, and job stories.
+    * Displays individual item details.
+    * React.
+    * Uses React Router.
+    * CORS enabled.

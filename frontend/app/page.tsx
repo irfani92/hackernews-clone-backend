@@ -35,8 +35,8 @@ export default function HomePage({ searchParams }: SearchParams) {
               key={key}
               href={`/?type=${key}&page=1`}
               className={`px-3 py-1 border-b-2 transition ${type === key
-                  ? 'border-orange-500 font-semibold text-orange-600'
-                  : 'border-transparent text-gray-600 hover:border-gray-400 hover:text-gray-800'
+                ? 'border-orange-500 font-semibold text-orange-600'
+                : 'border-transparent text-gray-600 hover:border-gray-400 hover:text-gray-800'
                 }`}
             >
               {label}
